@@ -9,7 +9,7 @@
 // defino un array  
 $coche = array(
     "111BCD" => array("ford","focus",5),
-    "222BCD" => array("Toyota","corolla",5),
+    "445BCD" => array("Toyota","corolla",5),
     "333BCD" => array("Honda","Prius",4),
     "444BCD" => array("kia","rio",4)
 )
