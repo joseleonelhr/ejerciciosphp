@@ -86,6 +86,7 @@
                 echo "<td>" . $datos["Nombre"] . "</td>";
                 echo "<td>" . $datos["Apellidos"] . "</td>";
                 echo "<td>" . $datos["Fecha"] . "</td>";
+                echo "<td>" . $datos["Edad"] . "</td>";
                 echo "<td>" . $datos["Localidad"] . "</td>";
                 echo "<td>" . $datos["Pais"] . "</td>";
                 echo "<td>" . $datos["Posicion"] . "</td>";
