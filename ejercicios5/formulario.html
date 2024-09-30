@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Información Personal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Formulario de Información Personal</h2>
+        <div class="card">
+            <div class="card-body">
+                <form id="infoForm">
+                    <div class="form-group">
+                        <label for="name">Nombre y Apellidos:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL Página Personal:</label>
+                        <input type="url" class="form-control" id="url" required>
+                    </div>
+                    <fieldset class="form-group">
+                        <legend>Sexo:</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="Masculino" required>
+                            <label class="form-check-label" for="male">Masculino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="Femenino">
+                            <label class="form-check-label" for="female">Femenino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="other" value="Otro">
+                            <label class="form-check-label" for="other">Otro</label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="householdMembers">Número de convivientes en el domicilio:</label>
+                        <input type="number" class="form-control" id="householdMembers" min="1" required>
+                    </div>
+                    <fieldset class="form-group">
+                        <legend>Aficiones:</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobby1" value="Deportes">
+                            <label class="form-check-label" for="hobby1">Deportes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobby2" value="Lectura">
+                            <label class="form-check-label" for="hobby2">Lectura</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobby3" value="Viajes">
+                            <label class="form-check-label" for="hobby3">Viajes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobby4" value="Música">
+                            <label class="form-check-label" for="hobby4">Música</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobby5" value="Cocina">
+                            <label class="form-check-label" for="hobby5">Cocina</label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="favoriteFood">Menú Favorito:</label>
+                        <select multiple class="form-control" id="favoriteFood" required>
+                            <option value="Pizza">Pizza</option>
+                            <option value="Sushi">Sushi</option>
+                            <option value="Tacos">Tacos</option>
+                            <option value="Ensalada">Ensalada</option>
+                            <option value="Pasta">Pasta</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        <h3 class="mt-5">Resumen de Información</h3>
+        <table class="table table-bordered" id="summaryTable">
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos se mostrarán aquí -->
+            </tbody>
+    </div>
+
+   </body>
+</html>
