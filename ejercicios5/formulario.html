@@ -13,64 +13,64 @@
         <h2 class="text-center">Formulario de Información Personal</h2>
         <div class="card bg-light">
             <div class="card-body">
-                <form id="infoForm">
+                <form action="formulario.php" method="post">
                     <div class="form-group">
                         <label for="name">Nombre y Apellidos:</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="url">URL Página Personal:</label>
-                        <input type="url" class="form-control" id="url" required>
+                        <input type="url" class="form-control" name="direccion" required>
                     </div>
                     <fieldset class="form-group">
                         <legend>Sexo:</legend>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="male" value="Masculino" required>
+                            <input class="form-check-input" type="radio" name="gender"  value="Masculino" required>
                             <label class="form-check-label" for="male">Masculino</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="female" value="Femenino">
+                            <input class="form-check-input" type="radio" name="gender"  value="Femenino">
                             <label class="form-check-label" for="female">Femenino</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="other" value="Otro">
+                            <input class="form-check-input" type="radio" name="gender"  value="Otro">
                             <label class="form-check-label" for="other">Otro</label>
                         </div>
                     </fieldset>
                     <div class="form-group">
                         <label for="householdMembers">Número de convivientes en el domicilio:</label>
-                        <input type="number" class="form-control" id="householdMembers" min="1" required>
+                        <input type="number" class="form-control" name="numerohabitantes" min="1" required>
                     </div>
                     <fieldset class="form-group">
                         <legend>Aficiones:</legend>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="hobby1" value="Deportes">
+                            <input class="form-check-input" type="checkbox" name="hobby[]" value="Deportes">
                             <label class="form-check-label" for="hobby1">Deportes</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="hobby2" value="Lectura">
+                            <input class="form-check-input" type="checkbox" name="hobby[]" value="Lectura">
                             <label class="form-check-label" for="hobby2">Lectura</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="hobby3" value="Viajes">
+                            <input class="form-check-input" type="checkbox" name="hobby[]" value="Viajes">
                             <label class="form-check-label" for="hobby3">Viajes</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="hobby4" value="Música">
+                            <input class="form-check-input" type="checkbox" name="hobby[]" value="Música">
                             <label class="form-check-label" for="hobby4">Música</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="hobby5" value="Cocina">
+                            <input class="form-check-input" type="checkbox" name="hobby[]" value="Cocina">
                             <label class="form-check-label" for="hobby5">Cocina</label>
                         </div>
                     </fieldset>
                     <div class="form-group">
                         <label for="favoriteFood">Menú Favorito:</label>
-                        <select multiple class="form-control" id="favoriteFood" required>
+                        <select multiple class="form-control" name="comidafavorita[]" required>
                             <option value="Pizza">Pizza</option>
                             <option value="Sushi">Sushi</option>
                             <option value="Tacos">Tacos</option>
@@ -83,17 +83,7 @@
             </div>
         </div>
 
-        <h3 class="mt-5">Resumen de Información</h3>
-        <table class="table table-bordered" id="summaryTable">
-            <thead>
-                <tr>
-                    <th>Campo</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Los datos se mostrarán aquí -->
-            </tbody>
+  
     </div>
 
    </body>
