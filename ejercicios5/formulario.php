@@ -1,13 +1,18 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if((!empty($_REQUEST["name"]))&& (isset($_REQUEST["name"]))){
+        $name = htmlspecialchars($_REQUEST["name"]);}
+    if((!empty($_REQUEST["email"]))&& (isset($_REQUEST["email"]))){
+        $email = htmlspecialchars($_REQUEST["email"]);}
+    if((!empty($_REQUEST["gender"]))&& (isset($_REQUEST["gender"]))){
+        $gender = htmlspecialchars($_REQUEST["gender"]);}
+    if((!empty($_REQUEST["numerohabitantes"]))&& (isset($_REQUEST["numerohabitantes"]))){
+        $numerohabitantes = htmlspecialchars($_REQUEST["numerohabitantes"]);}
+    if(!empty($_REQUEST["hobby"])){
+        $hobby = $_REQUEST["hobby"];}
+    if(!empty($_REQUEST["comidafavorita"])){
+        $comidafavorita = $_REQUEST["comidafavorita"];}
     
-    $name = htmlspecialchars($_REQUEST["name"]);
-    $email = htmlspecialchars($_REQUEST["email"]); 
-    $gender = htmlspecialchars($_REQUEST["gender"]);
-    $numerohabitantes = htmlspecialchars($_REQUEST["numerohabitantes"]);
-    $hobby = isset($_REQUEST["hobby"]) ? $_REQUEST["hobby"] : [];
-    $comidafavorita = isset($_REQUEST["comidafavorita"]) ? $_REQUEST["comidafavorita"] : [];
-
     echo "<!DOCTYPE html>
     <html lang='es'>
     <head>
@@ -32,14 +37,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <tr><td>Género</td><td>{$gender}</td></tr>
                 <tr><td>Número de Habitantes</td><td>{$numerohabitantes}</td></tr>";
 
-    // Mostrar hobbies
-    foreach ($hobby as $value) {
-        echo "<tr><td>Hobby</td><td>{$value}</td></tr>";
+    // Mostrar hobbies si están definidos
+    if (!empty($hobby)) {
+        foreach ($hobby as $value) {
+            echo "<tr><td>Hobby</td><td>{$value}</td></tr>";
+        }
     }
 
-    // Mostrar comidas favoritas
-    foreach ($comidafavorita as $value) {
-        echo "<tr><td>Comida Favorita</td><td>{$value}</td></tr>";
+    // Mostrar comidas favoritas si están definidas
+    if (!empty($comidafavorita)) {
+        foreach ($comidafavorita as $value) {
+            echo "<tr><td>Comida Favorita</td><td>{$value}</td></tr>";
+        }
     }
 
     echo "    </tbody>
@@ -50,16 +59,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </body>
     </html>";
 }
-?>
-
-
-
-
-
-
-
-
-
-}
-
 ?>
