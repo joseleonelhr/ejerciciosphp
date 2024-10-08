@@ -8,8 +8,8 @@
     <meta http-equiv="refresh" content="5;url=login.php">
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
+    <div class="container p-5">
+        <div class="row d-flex justify-content-center align-items">
             <div class="col-md-6">
                 <div class="alert alert-danger text-center" role="alert">
                     <h1 class="display-4">Acceso Denegado</h1>
