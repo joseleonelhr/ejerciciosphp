@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if (is_array($name) && is_array($votos)) {
-        $resultados = []; // Asegúrate de inicializar el array resultados
-        foreach ($votos as $index => $values) { // Utiliza el índice para relacionar nombres y votos
+        $resultados = []; 
+        foreach ($votos as $index => $values) { 
             $resultados[] = [
-                "partido" => htmlspecialchars($name[$index]), // Agrega el nombre del partido
+                "partido" => htmlspecialchars($name[$index]), 
                 "votos" => intval($values),
                 "divisiones" => [
                     "div1" => intval($values),
