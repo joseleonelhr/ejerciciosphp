@@ -1,26 +1,25 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-session_start();
-if (!isset($_SESSION["carrototal"])) {
-    $_SESSION["carrototal"] = 0;
-}
-if($_SERVER["REQUEST_METHOD"]==="GET" && isset($_GET["idArticulo"])){
-    $valor = $_GET["idArticulo"];
-
-    
-
-    
-
-}
+  session_start();
 $articulos = array(
     array("id" => 1, "nombre" => "Zapatillas Nike", "precio" => 60),
     array("id" => 2, "nombre" => "Sudadera Domyos", "precio" => 15),
     array("id" => 3, "nombre" => "Pala de pádel Vairo", "precio" => 50),
     array("id" => 4, "nombre" => "Pelota de baloncesto Molten", "precio" => 20)
     );
-$carro = [];
+if($_SERVER["REQUEST_METHOD"]==="GET" && isset($_GET["idArticulo"])){
+  
+    if (!isset($_SESSION["carro"])) {
+        $_SESSION["carro"] = []; 
+    }
+        $valor = $_GET["idArticulo"];
+        foreach($articulos as $articulo){
+            if($valor == $articulo["id"]){
+              array_push($_SESSION["carro"],$articulo);
+            }
+        }
+      
 
+}
 
 ?>
 <!DOCTYPE html>
@@ -45,16 +44,27 @@ $carro = [];
     <div class="container bg-light mt-5">
         <h2 class="text-center">CARRO DE COMPRAS</h2>
         <div class="card bg-light">
-            <?php foreach($carros as $values){
-                echo "<br>";
-                echo $values;
-            } ?>    
+            <ul>
+            <?php
+            $total=0;
+            if($_SERVER["REQUEST_METHOD"]==="GET" && isset($_GET["idArticulo"])){
+             foreach($_SESSION["carro"] as $values){
+                
+                echo "<li>".$values["nombre"]. " ". $values["precio"]."$"."</li>";
+                $total+=$values["precio"];
+            } 
+        }
+            ?>
+            </ul>
+            <?php
+                echo "<h3>"."Precio: ".  $total. "$". "</h3>";
+            ?>    
         </div>
     </div>
     <div class="container bg-light mt-5">
         <h2 class="text-center">CARRO DE COMPRAS</h2>
         <div class="card bg-light">
-        <p><a class="link-opacity-100-hover" href="#">Borrar Carro</a></p>  
+        <p><a class="link-opacity-100-hover" href="closeSession.php">Borrar Carro</a></p>  
         </div>
     </div>
 </body>
